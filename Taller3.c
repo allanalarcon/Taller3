@@ -23,13 +23,21 @@ void cifradoCiclico(char mensaje[], int llave)
 
 void main(int argc, char *argv[])
 {
-	char mensaje[1024];
-	int llave;
-	puts("CIFRADO CÍCLICO");
-	printf("Ingrese mensaje a cifrar: ");
-	fgets(mensaje, 1024, stdin);
-	printf("Ingrese la llave numérica: ");
-	scanf("%d", &llave);
-	printf("Mensaje cifrado: ");
-	cifradoCiclico(mensaje, llave);
+	if (argc == 3)
+	{
+		printf("Mensaje cifrado: ");
+                cifradoCiclico(argv[2], atoi(argv[1]));
+	}
+	else
+	{ 
+		char mensaje[1024];
+		int llave;
+		puts("CIFRADO CÍCLICO");
+		printf("Ingrese mensaje a cifrar: ");
+		fgets(mensaje, 1024, stdin);
+		printf("Ingrese la llave numérica: ");
+		scanf("%d", &llave);
+		printf("Mensaje cifrado: ");
+		cifradoCiclico(mensaje, llave);
+	}
 }
