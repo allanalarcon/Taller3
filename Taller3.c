@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
+#include <stdlib.h>
 
 char cifrado[1024] = "";
 
@@ -23,10 +24,15 @@ void cifradoCiclico(char mensaje[], int llave)
 
 void main(int argc, char *argv[])
 {
-	if (argc == 3)
+	if (argc != 3 && argc != 1)
+        {
+                printf("Debe ingresar la llave y el texto\n");
+        }
+        else if (argc == 3)
 	{
 		printf("Mensaje cifrado: ");
                 cifradoCiclico(argv[2], atoi(argv[1]));
+		printf("\n");
 	}
 	else
 	{ 
