@@ -21,7 +21,7 @@ void cifradoCiclico(char mensaje[], int llave)
 	}
 }
 
-void main(void)
+void main(int argc, char *argv[])
 {
 	char mensaje[1024];
 	int llave;
