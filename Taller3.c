@@ -8,8 +8,6 @@ char codMorse[30][5]={".-","-...","-.-.","-..",".","..-.","--.","....","..",".--
 
 char cifrado[1024] = "";
 
-char cifradoMorse[1024] = "";
-
 void cifradoCiclico(char mensaje[], int llave)
 {
 	for (int i = 0; i < strlen(mensaje); i++)
@@ -31,14 +29,11 @@ void cifradoMorse(char mensaje[], int llave)
 	for (int i = 0; i < strlen(mensaje); i++)
 	{
 		if ispunct(mensaje[i])
-			cifradoMorse[i] = mensaje[i];
+			printf("%c ", mensaje[i]);
 		else if isspace(mensaje[i])
-			cifradoMorse[i] = "/";
+			printf("/ ");
 		else
-		{
-			cifradoMorse[i] = codMorse[i];
-		}
-		printf("%c", cifradoMorse[i]);
+			printf("%s ", codMorse[toupper(mensaje[i]) - 65]);
 	}
 }
 
@@ -53,6 +48,9 @@ void main(int argc, char *argv[])
 		printf("Mensaje cifrado: ");
 		cifradoCiclico(argv[2], atoi(argv[1]));
 		printf("\n");
+		printf("Mensaje cifrado en morse: ");
+		cifradoMorse(cifrado, atoi(argv[1]));
+		printf("\n");
 	}
 	else
 	{ 
@@ -65,5 +63,8 @@ void main(int argc, char *argv[])
 		scanf("%d", &llave);
 		printf("Mensaje cifrado: ");
 		cifradoCiclico(mensaje, llave);
+		printf("Mensaje cifrado en morse: ");
+                cifradoMorse(cifrado, llave);
+                printf("\n");
 	}
 }
