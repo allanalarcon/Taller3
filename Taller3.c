@@ -14,12 +14,32 @@ void cifradoCiclico(char mensaje[], int llave)
 	{
 		if (ispunct(mensaje[i]) || isspace(mensaje[i]))
 			cifrado[i] = mensaje[i];
-		else if ((mensaje[i] < 91) && ((mensaje[i] + llave) > 90))
-			cifrado[i] = mensaje[i] + llave - (26*((mensaje[i] + llave - 65)/26));
-		else if ((mensaje[i] > 96) && ((mensaje[i] + llave) > 122))
-			cifrado[i] = mensaje[i] + llave - (26*((mensaje[i] + llave - 97)/26));
-		else
-			cifrado[i] = mensaje[i] + llave;
+		else if (mensaje[i] < 91)
+			if (llave < 0)
+				if ((mensaje[i] + llave) > 64)
+					cifrado[i] = mensaje[i] + llave;
+				else if (mensaje[i] + llave > 38)
+					cifrado[i] = mensaje[i] + llave + 26;
+				else
+					cifrado[i] = mensaje[i] + llave + (26*(((mensaje[i] - llave - 65)/26)));
+			else
+				if (mensaje[i] + llave > 90)
+					cifrado[i] = mensaje[i] + llave - (26*((mensaje[i] + llave - 65)/26));
+				else
+					cifrado[i] = mensaje[i] + llave;
+		else if (mensaje[i] > 96)
+			if (llave < 0)
+				if ((mensaje[i] + llave) > 96)
+					cifrado[i] = mensaje[i] + llave;
+				else if (mensaje[i] + llave > 70)
+					cifrado[i] = mensaje[i] + llave + 26;
+				else
+					cifrado[i] = mensaje[i] + llave + (26*(((mensaje[i] - llave - 97)/26)));
+			else
+				if (mensaje[i] + llave > 122)
+					cifrado[i] = mensaje[i] + llave - (26*((mensaje[i] + llave - 97)/26));
+				else
+					cifrado[i] = mensaje[i] + llave;
 		printf("%c", cifrado[i]);
 	}
 }
