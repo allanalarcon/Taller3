@@ -53,7 +53,7 @@ void main(int argc, char *argv[])
 		printf("\n");
 	}
 	else
-	{ 
+	{
 		char mensaje[1024];
 		int llave;
 		puts("CIFRADO CÍCLICO");
@@ -64,7 +64,7 @@ void main(int argc, char *argv[])
 		printf("Mensaje cifrado: ");
 		cifradoCiclico(mensaje, llave);
 		printf("Mensaje cifrado en morse: ");
-                cifradoMorse(cifrado, llave);
-                printf("\n");
+		cifradoMorse(cifrado, llave);
+		printf("\n");
 	}
 }
