@@ -2,7 +2,8 @@
 #include <string.h>
 #include <ctype.h>
 
-char *cifradoCiclico(char *mensaje, int llave){
+char *cifradoCiclico(char *mensaje, int llave)
+{
 	char cifrado[1024] = "";	
 	for (int i = 0; i < strlen(mensaje); i++)
 	{
@@ -34,7 +35,7 @@ char *cifradoCiclico(char *mensaje, int llave){
 		}
 	}
 	char *cif = cifrado;
-        return cif;
+	return cif;
 }
 
 char*  cifradoAutoLlave(char* mensaje,  char* llave){

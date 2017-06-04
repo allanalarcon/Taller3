@@ -38,6 +38,6 @@ char *claveMorse(char *mensaje)
 			}
 		}	
 	}
-	char *cif = morse;
-        return cif;
+	char *mor = morse;
+	return mor;
 }
