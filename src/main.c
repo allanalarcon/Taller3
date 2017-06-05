@@ -52,7 +52,6 @@ int main(int argc, char *argv[])
 
 			printf("Ingrese mensaje a cifrar: ");
 			fgets(mensaje, 1024, stdin);
-			char *men = mensaje;
 
 			printf("Ingrese la llave numérica: ");
 			scanf("%d", &llave);
@@ -67,7 +66,6 @@ int main(int argc, char *argv[])
 
 			printf("Ingrese mensaje a cifrar: ");
 			fgets(mensaje, 1024, stdin);
-			char *men = mensaje;
 
 			printf("Ingrese la llave: ");
 			scanf("%s", llavetext);
@@ -82,7 +80,6 @@ int main(int argc, char *argv[])
 
 			printf("Ingrese mensaje a cifrar: ");
 			fgets(mensaje, 1024, stdin);
-			char *men = mensaje;
 
 			printf("Ingrese la llave: ");
 			scanf("%s", llavetext);
