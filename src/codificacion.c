@@ -9,7 +9,7 @@ char *claveMorse(char *mensaje)
 {
 	char morse[1024*5];
 	int count = 0;
-	for (int i = 0; i < strlen(mensaje) - 1; i++)
+	for (int i = 0; i < strlen(mensaje); i++)
 	{
 		if ispunct(mensaje[i])
 		{
@@ -17,7 +17,7 @@ char *claveMorse(char *mensaje)
 			morse[count + 1] = 32;
 			count = count + 2;
 		}
-		else if isspace(mensaje[i])
+		else if (isspace(mensaje[i]) && (mensaje[i] != 10))
 		{
 			morse[count] = 47;
 			morse[count + 1] = 32;
@@ -25,13 +25,12 @@ char *claveMorse(char *mensaje)
 		}
 		else
 		{
-			
 			for (int j = 0; j < strlen(codMorse[toupper(mensaje[i]) - 65]); j++)
 			{
 				morse[count] = codMorse[toupper(mensaje[i]) - 65][j];
 				count++;
 			}
-			if (i != strlen(mensaje)-2)
+			if (i != strlen(mensaje) - 1)
 			{
 				morse[count] = 32;
 				count++;
